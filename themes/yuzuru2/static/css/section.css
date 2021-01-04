@@ -1,0 +1,16 @@
+h1 {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+h2 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* スマホ用 */
+@media screen and (max-width: 767px) {
+  aside {
+    display: none;
+  }
+}

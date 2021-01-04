@@ -1,0 +1,13 @@
+{{ if not .Site.IsServer }} 
+  <div class="text-center">
+    <ins
+      class="adsbygoogle"
+      style="display:block"
+      data-ad-client="{{ .Site.Params.adsbygoogleId }}"
+      data-ad-slot="{{ .Site.Params.adsbygoogleSlotId }}"
+      data-ad-format="auto"
+      data-full-width-responsive="true"
+    ></ins>
+  </div>
+{{ end }}
+

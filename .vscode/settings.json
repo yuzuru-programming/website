@@ -1,0 +1,34 @@
+{
+  "[html]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.formatOnSave": false
+  },
+  "[markdown]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.formatOnSave": false
+  },
+  "japanese-proofreading.textlint.固有名詞": false,
+  "japanese-proofreading.textlint.誤字": false,
+  "japanese-proofreading.textlint.算用数字": false,
+  "japanese-proofreading.textlint.算用数字と漢数字の使い分け": false,
+  "japanese-proofreading.textlint.助詞の連続": false,
+  "japanese-proofreading.textlint.冗長な表現": false,
+  "japanese-proofreading.textlint.全角文字どうし": false,
+  "japanese-proofreading.textlint.読点の数": false,
+  "japanese-proofreading.textlint.全角文字と半角文字の間": false,
+  "japanese-proofreading.textlint.アルファベット": false,
+  "japanese-proofreading.textlint.かっこ類と隣接する文字の間のスペースの有無": false,
+  "japanese-proofreading.textlint.ダッシュ(-)": false,
+  "japanese-proofreading.textlint.ハイフン(-)": false,
+  "japanese-proofreading.textlint.ひらく漢字": false,
+  "japanese-proofreading.textlint.ら抜き言葉": false,
+  "japanese-proofreading.textlint.外来語カタカナ表記": false,
+  "japanese-proofreading.textlint.一部の助数詞の表記": false,
+  "japanese-proofreading.textlint.丸かっこ（）": false,
+  "japanese-proofreading.textlint.技術用語": false,
+  "japanese-proofreading.textlint.句点(。)と読点(、)": false,
+  "japanese-proofreading.textlint.疑問符(？)": false,
+  "japanese-proofreading.textlint.重言": false
+}

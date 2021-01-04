@@ -1,0 +1,51 @@
+{{ define "head" }}
+<head>
+  {{- partial "head.html" . -}}
+  <link rel="stylesheet" href="/css/single.css" />
+  <link rel="stylesheet" href="/css/toc.css" />
+  <link rel="stylesheet" href="/css/highlight.css" />
+  <link rel="stylesheet" href="/css/clipboard.css" />
+</head>
+{{ end }}
+
+{{ define "banner" }}
+  {{- partial "banner.html" . -}}
+{{ end }}
+
+{{ define "breadcrumb" }}
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <a href="/">ホーム</a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page">記事</li>
+  </ol>
+{{ end }}
+
+{{ define "section" }}
+  <section>
+    <div style="background-color: #fff;padding: 0 10px;">
+      <div class="text-right" style="color: #999;font-size: 15px; margin-right: 16px;">
+        更新日:<time>{{.Lastmod.Format "2006-01-02"}}</time>
+      </div>
+     
+      <h1>
+        {{ .Title }}
+      </h1>
+
+      <div class="_tagWrapper">
+        {{ range .Params.tags }}
+        <div class="_tag">
+          <a href="/tags/{{ . | urlize }}">{{ . }}</a>
+        </div>
+        {{ end }}
+      </div>
+
+      <!-- 目次 -->
+      {{ partial "toc.html" . }}
+
+      <br />
+      {{ .Content }}
+    </div>
+  </section>
+  <br />
+{{ end }}

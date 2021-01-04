@@ -1,0 +1,27 @@
+{{ define "head" }}
+<head>
+  {{- partial "head.html" . -}}
+  <link rel="stylesheet" href="/css/section.css" />
+</head>
+{{ end }}
+
+{{ define "banner" }}
+  {{- partial "banner.html" . -}}
+{{ end }}
+
+{{ define "breadcrumb" }}
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <a href="/">ホーム</a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page">{{ .Title}}</li>
+  </ol>
+{{ end }}
+
+{{ define "section" }}
+  <section>
+    <div style="background-color: #fff;padding: 0 10px;">
+      {{ .Content}}
+    </div>
+  </section>
+{{ end }}

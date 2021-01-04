@@ -1,0 +1,81 @@
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<!-- タイトル -->
+<title>{{ if not .IsHome }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>
+
+<!-- Description -->
+<meta
+	name="description"
+	content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}"
+/>
+
+<!-- Bootstrap4のCSS -->
+<link
+	rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous"
+/>
+
+<!-- FontawesomeのCSS -->
+<link
+	href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+	rel="stylesheet"
+/>
+
+<!-- 自作CSS -->
+<link rel="stylesheet" href="/css/style.css" />
+
+<!-- 設定されていたら読み込むCSS -->
+{{ range .Page.Params.page_css }}
+	<link rel="stylesheet" href="{{.}}" />
+{{ end }}
+
+<!-- favicon -->
+<link rel="icon" href="/uploads/favicon.ico" />
+<link
+	rel="apple-touch-icon"
+	href="/uploads/apple-touch-icon.png"
+	sizes="180x180"
+/>
+<link
+	rel="icon"
+	href="/uploads/android-touch-icon.png"
+	sizes="192x192"
+/>
+
+<!-- OGP -->
+<meta property="fb:app_id" content="{{ .Site.Params.facebookAppId }}" />
+<meta property="og:url" content="{{ .Site.BaseURL }}" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="{{ .Site.Title}}" />
+<meta property="og:site_name" content="{{ .Site.Title}}" />
+<meta property="og:image" content="{{ .Site.BaseURL }}/uploads/ogp.png" />
+<meta property="og:description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}" />
+
+{{ if not .Site.IsServer }} 
+	<!-- アナリティクス -->
+	<script
+		async
+		src="https://www.googletagmanager.com/gtag/js?id={{ .Site.GoogleAnalytics }}"
+	></script>
+
+	<!-- アドセンス -->
+	<script
+		async
+		src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+	></script>
+
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag('js', new Date());
+		gtag('config', '{{ .Site.GoogleAnalytics }}');
+
+		// アドセンス
+		window.adsbygoogle = window.adsbygoogle || [];
+	</script>
+{{ end }}

@@ -1,0 +1,19 @@
+{{ define "head" }}
+<head>
+  {{- partial "head.html" . -}}
+</head>
+{{ end }}
+
+{{ define "breadcrumb" }}
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <a href="/">ホーム</a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page">タグ</li>
+    <li class="breadcrumb-item active" aria-current="page">{{ .Title }}</li>
+  </ol>
+{{ end }}
+
+{{ define "section" }}
+  {{- partial "posts.html" . -}}
+{{ end }}

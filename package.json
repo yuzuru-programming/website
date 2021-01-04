@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "start": "hugo server",
+    "build": "cd apuri/chat && npm i && npm run build && mv build chat && cd ../../ && cp -r apuri/chat/chat docs/apuri/"
+  },
+  "devDependencies": {
+    "hugo-bin": "^0.67.1"
+  }
+}

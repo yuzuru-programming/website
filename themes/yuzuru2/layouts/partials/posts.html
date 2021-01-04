@@ -1,0 +1,32 @@
+<section>
+  {{ range (where .Paginator.Pages "Type" "posts") }}
+    <div class="card">
+      <div class="card-body" style="padding-bottom: 0">
+        <h2 style="font-size: 18px">
+          <a href="{{ .RelPermalink }}" style="color: black">
+            {{ .Title }}
+          </a>
+        </h2>
+    
+        <div class="_tagWrapper">
+          {{ range .Params.tags }}
+            <div class="_tag">
+              <a href="/tags/{{ . | urlize }}">{{ . }}</a>
+            </div>
+          {{ end }}
+        </div>
+
+        <div style="font-size: 15px; text-align: right;">
+          <time>
+            {{.Date.Format "2006/01/02" }}
+          </time>
+        </div>
+      </div>
+    </div>
+    <br />
+  {{ end }}
+
+  {{ template "_internal/pagination.html" . }} 
+</section>
+
+<hr>

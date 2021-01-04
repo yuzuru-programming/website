@@ -1,0 +1,24 @@
+<!-- タグ一覧 -->
+<ul class="list-group">
+  {{ range .Site.Taxonomies.tags.ByCount }}
+    <li class="list-group-item">
+      <a href="/tags/{{ .Term | urlize }}">
+        {{ .Name }} 
+      </a>({{ .Count }})
+    </li>
+  {{ end }}
+</ul>
+
+<br />
+
+<!-- 月一覧 -->
+<ul class="list-group">
+  {{ range $items := .Site.Taxonomies.archives.Alphabetical.Reverse }}
+    <li class="list-group-item">
+      <a href="/archives/{{ .Name | urlize | lower }}">
+        {{ .Name }} 
+      </a>({{ .Count }})
+    </li>
+  {{ end }}
+</ul>
+

@@ -1,0 +1,60 @@
+# サイトURL
+baseURL = "https://itsumen.com"
+
+# サイトのタイトル
+title = "いつめんドットコム"
+
+# 言語
+languageCode = "ja-jp"
+
+# ビルド時に生成されるディレクトリ名
+publishDir = "docs"
+
+# 使用するテーマ
+theme = "yuzuru2"
+
+# 記事一覧で何件表示するか
+Paginate = 5
+
+# GoogleアナリティクスID
+googleAnalytics = "UA-157762689-1"
+
+[Params]
+  # サイトのDescription
+  description = "プログラミングに関する知識を記録・共有するためのサービスです。\nコードを書いていて気づいたことや、ハマった仕様について、知見を共有しましょう。"
+  
+  # ファイスブックのID
+  facebookAppId = "2506961392954915"
+
+  # GoogleアドセンスID 
+  adsbygoogleId = "ca-pub-7805462476751917"
+
+  # GoogleアドセンスslotID
+  adsbygoogleSlotId = "5241372791"
+
+# 使用するタクソノミー
+[taxonomies]
+  archive = "archives"
+  tag = "tags"
+
+# セクションページ
+[menu]
+    [[menu.main]]
+      name = "お問い合わせ"
+      url = "/contact"
+      weight = 1
+
+    [[menu.main]]
+      name = "プライバシーポリシー"
+      url = "/privacy"
+      weight = 2
+
+    [[menu.main]]
+      name = "QRコード作成"
+      url = "/apuri/qrcode"
+      weight = 3
+
+    [[menu.main]]
+      name = "短縮URL作成"
+      url = "/apuri/short"
+      weight = 4

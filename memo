@@ -1,0 +1,19 @@
+hugo server --buildDrafts --watch --bind=0.0.0.0 --baseUrl=192.168.0.4
+
+npx hugo new posts/2021/01/04/2021-01-04-01.md
+
+# html
+{{< rawhtml >}}
+<br />
+{{< /rawhtml >}}
+
+{{< rawhtml >}}
+<img src="/uploads/2021/01/02/1.png" width="80%"/>
+{{< /rawhtml >}}
+
+# code
+{{< code lang="javascript" title="gas.js" >}}
+{{< /code >}}
+
+# rss.xml
+https://github.com/gohugoio/hugo/blob/master/tpl/tplimpl/embedded/templates/_default/rss.xml
