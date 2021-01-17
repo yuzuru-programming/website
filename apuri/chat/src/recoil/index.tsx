@@ -16,6 +16,10 @@ const state = {
     key: counter.count,
     default: '',
   }),
+  uname: atom({
+    key: counter.count,
+    default: '名無し',
+  }),
   loading: atom({
     key: counter.count,
     default: true,

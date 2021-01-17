@@ -12,6 +12,30 @@ const Header = () => {
   return React.useMemo(() => {
     return (
       <>
+        <div className="row">
+          <div className="col-12 clearfix">
+            <div className="float-right">
+              {snsLogin === false ? (
+                <button
+                  type="button"
+                  className="btn btn-success"
+                  onClick={async () => login()}
+                >
+                  ログイン
+                </button>
+              ) : (
+                <button
+                  type="button"
+                  className="btn btn-danger"
+                  onClick={() => logout()}
+                >
+                  ログアウト
+                </button>
+              )}
+            </div>
+          </div>
+        </div>
+
         <ol className="breadcrumb">
           <li className="breadcrumb-item">
             <a href="/">ホーム</a>
@@ -20,24 +44,6 @@ const Header = () => {
             リアルタイムチャット
           </li>
         </ol>
-
-        {snsLogin === false ? (
-          <button
-            type="button"
-            className="btn btn-success"
-            onClick={async () => login()}
-          >
-            ログイン
-          </button>
-        ) : (
-          <button
-            type="button"
-            className="btn btn-danger"
-            onClick={() => logout()}
-          >
-            ログアウト
-          </button>
-        )}
 
         <p>接続ユーザ数: {su}</p>
         <hr />

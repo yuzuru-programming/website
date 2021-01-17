@@ -102,7 +102,10 @@ const List = () => {
     return (
       <>
         <p>最新50件</p>
-        <div className="line-bc">{html}</div>
+        <div className="line-bc">
+          {html}
+          <br />
+        </div>
       </>
     );
   }, [list, uid]);
