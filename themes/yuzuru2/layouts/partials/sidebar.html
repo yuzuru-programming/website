@@ -1,4 +1,5 @@
 <!-- タグ一覧 -->
+<div>タグ</div>
 <ul class="list-group">
   {{ range .Site.Taxonomies.tags.ByCount }}
     <li class="list-group-item">
@@ -12,6 +13,7 @@
 <br />
 
 <!-- 月一覧 -->
+<div>アーカイブ</div>
 <ul class="list-group">
   {{ range $items := .Site.Taxonomies.archives.Alphabetical.Reverse }}
     <li class="list-group-item">
