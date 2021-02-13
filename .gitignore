@@ -1,3 +1,4 @@
-resources
-docs
+.cache
 node_modules
+public
+src/__generated__

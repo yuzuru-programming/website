@@ -1,0 +1,93 @@
+body {
+  margin: 0;
+  background: #f7f7f7;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+// https://www.nxworld.net/css-background-aspect-ratio.html
+._background {
+  width: 100%;
+  height: 0;
+  padding-top: calc(250 / 1800 * 100%); /* calc(画像高さ ÷ 画像横幅 × 100%) */
+  background: url(/uploads/header.png) center center / cover no-repeat;
+}
+
+header {
+  background: #f0ebeb;
+}
+
+main {
+  flex: 1;
+  margin-top: 10px;
+}
+
+section {
+  width: 80%;
+  margin: 0 auto;
+}
+
+aside {
+  width: 60%;
+}
+
+/* タグのレイアウトここから */
+._tagWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+._tag {
+  align-items: center;
+  background-color: #eee;
+  color: #666;
+  padding: 4px 8px;
+  border-radius: 4px;
+  margin-right: 5px;
+  font-size: 14px;
+}
+/* タグのレイアウトここまで */
+
+/* スマホ用 */
+@media screen and (max-width: 768px) {
+  section {
+    width: 100%;
+  }
+}
+
+// シンタックスハイライトのタイトル
+.gatsby-code-title {
+  background: #2e96b5;
+  color: #eee;
+  padding: 6px 12px;
+  line-height: 1;
+  font-weight: bold;
+  display: table;
+  border-radius: 4px 4px 0 0;
+}
+
+pre[class*='language-'] {
+  background-color: #1c1b1b;
+  display: block;
+  margin: 0 0 20px !important ;
+  border-radius: 0 4px 4px 4px;
+}
+
+// 目次
+// https://www.ushiji.online/table-of-contents#%E7%9B%AE%E6%AC%A1%E3%81%AE%E3%82%B9%E3%82%BF%E3%82%A4%E3%83%AB%E3%82%B7%E3%83%BC%E3%83%88%E6%9B%B4%E6%96%B0
+.table-of-content {
+  max-width: 600px;
+  margin: 2rem auto;
+  border: solid #dadada 1px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 5px silver;
+  padding: 0.5rem 0.5rem 0.5rem 2rem;
+  line-height: 1.5;
+  &:before {
+    content: '目次';
+    font-size: 110%;
+    font-weight: bold;
+  }
+}
