@@ -28,7 +28,6 @@ async function handleEvent(event) {
     });
 
     resp.headers.set('X-Frame-Options', 'SAMEORIGIN');
-    resp.headers.set('cache-control', 'public, max-age=1');
 
     return resp;
   } catch (e) {
