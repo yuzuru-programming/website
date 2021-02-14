@@ -3,6 +3,7 @@ import { Link } from 'gatsby';
 import { Constant } from '../constant';
 
 export default (params: { page: string }) => {
+  const styles = { textDecoration: 'none', color: 'black' };
   return (
     <>
       <header>
@@ -41,19 +42,35 @@ export default (params: { page: string }) => {
             >
               <ul className="nav navbar-nav mx-auto">
                 <li className="list-group-item">
-                  <Link to="/contact">お問い合わせ</Link>
+                  <Link to="/app/qrcode" style={styles}>
+                    QRコードを生成する
+                  </Link>
                 </li>
                 <li className="list-group-item">
-                  <Link to="/privacy">プライバシーポリシー</Link>
+                  <Link to="/app/shortlink" style={styles}>
+                    短縮URLを生成する
+                  </Link>
                 </li>
                 <li className="list-group-item">
-                  <Link to="/app/qrcode">QRコードを生成する</Link>
+                  <Link to="/app/chat" style={styles}>
+                    リアルタイムチャット
+                  </Link>
                 </li>
                 <li className="list-group-item">
-                  <Link to="/app/shortlink">短縮URLを生成する</Link>
+                  <Link to="/app/code" style={styles}>
+                    コード投稿・共有
+                  </Link>
+                </li>
+
+                <li className="list-group-item">
+                  <Link to="/contact" style={styles}>
+                    お問い合わせ
+                  </Link>
                 </li>
                 <li className="list-group-item">
-                  <Link to="/app/chat">リアルタイムチャット</Link>
+                  <Link to="/privacy" style={styles}>
+                    プライバシーポリシー
+                  </Link>
                 </li>
               </ul>
             </div>

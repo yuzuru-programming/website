@@ -71,6 +71,7 @@ export default ({
         </div>
       )}
 
+      <hr />
       {/* パンくずリスト */}
       <ol className="breadcrumb">
         <li className="breadcrumb-item">

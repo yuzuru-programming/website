@@ -8,7 +8,7 @@ moment.locale('ja');
 import Section from '../../templates/section';
 
 import { Constant } from '../../constant';
-import firebase from '../../firebase';
+import firebase from '../../firebase/chat';
 
 const reactStringReplace = require('react-string-replace');
 

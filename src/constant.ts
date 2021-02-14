@@ -21,4 +21,36 @@ export class Constant {
   static get pagenate() {
     return 5;
   }
+
+  // コード共有ページ
+  static get code() {
+    return {
+      lang: [
+        'html',
+        'css',
+        'javascript',
+        'python',
+        'php',
+        'go',
+        'java',
+        'c',
+        'rust',
+        'perl',
+        'bash',
+        'swift',
+        'ruby',
+        'c++',
+        'c#',
+        'json',
+        'sql',
+        'yaml',
+        'less',
+        'scss',
+        'typescript',
+        'markdown',
+        'kotlin',
+        'plaintext',
+      ],
+    };
+  }
 }

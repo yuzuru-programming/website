@@ -2,10 +2,23 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import copy from 'copy-to-clipboard';
 
-import { Loading } from '../../components/loading';
 import Section from '../../templates/section';
 
 import { Constant } from '../../constant';
+
+const Loading = () => {
+  return (
+    <>
+      <div>
+        <div className="d-flex align-items-center justify-content-center">
+          <div className="spinner-border text-primary" role="status">
+            <span className="visually-hidden"></span>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
 
 export default ({ location }: { location: { pathname: string } }) => {
   const Children = () => {
@@ -49,7 +62,11 @@ export default ({ location }: { location: { pathname: string } }) => {
     });
 
     if (loading) {
-      return <Loading />;
+      return (
+        <>
+          <Loading />
+        </>
+      );
     }
 
     return (
