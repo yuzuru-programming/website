@@ -24,51 +24,57 @@ export default ({
   );
 
   React.useEffect(() => {
-    const _query = Querystring.parse(location.search).q as string;
-    if (_query === undefined) {
-      navigate('/app/code');
-      return;
-    }
-
-    firebase.auth().onAuthStateChanged(async data => {
-      if (data === null) {
-        firebase
-          .auth()
-          .signInAnonymously()
-          .then(() => '');
-        return;
-      }
-
-      // get
-      const _ret = await firebase
-        .firestore()
-        .collection('boards')
-        .doc(_query)
-        .get();
-
-      if (!_ret.exists) {
+    try {
+      const _query = Querystring.parse(location.search).q as string;
+      if (_query === undefined) {
         navigate('/app/code');
         return;
       }
 
-      const _data = _ret.data() as {
-        title: string;
-        code: string;
-        genreId: number;
-      };
+      firebase.auth().onAuthStateChanged(async data => {
+        if (data === null) {
+          firebase
+            .auth()
+            .signInAnonymously()
+            .then(() => '');
+          return;
+        }
 
-      setInfo({ title: _data.title, code: _data.code, genreId: _data.genreId });
-      setLoading(false);
-    });
+        // get
+        const _ret = await firebase
+          .firestore()
+          .collection('boards')
+          .doc(_query)
+          .get();
 
-    if (process.env.NODE_ENV !== 'production') {
-      return;
-    }
+        if (!_ret.exists) {
+          navigate('/app/code');
+          return;
+        }
 
-    if (window) {
-      window.adsbygoogle = window.adsbygoogle || [];
-      window.adsbygoogle.push({});
-    }
+        const _data = _ret.data() as {
+          title: string;
+          code: string;
+          genreId: number;
+        };
+
+        setInfo({
+          title: _data.title,
+          code: _data.code,
+          genreId: _data.genreId,
+        });
+        setLoading(false);
+      });
+
+      if (process.env.NODE_ENV !== 'production') {
+        return;
+      }
+
+      if (window) {
+        window.adsbygoogle = window.adsbygoogle || [];
+        window.adsbygoogle.push({});
+      }
+    } catch (error) {}
   }, []);
 
   const CustomHead = () => {

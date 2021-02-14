@@ -78,24 +78,26 @@ export default ({
   });
 
   React.useEffect(() => {
-    firebase.auth().onAuthStateChanged(async data => {
-      if (data === null) {
-        firebase
-          .auth()
-          .signInAnonymously()
-          .then(() => '');
+    try {
+      firebase.auth().onAuthStateChanged(async data => {
+        if (data === null) {
+          firebase
+            .auth()
+            .signInAnonymously()
+            .then(() => '');
+          return;
+        }
+      });
+
+      if (process.env.NODE_ENV !== 'production') {
         return;
       }
-    });
 
-    if (process.env.NODE_ENV !== 'production') {
-      return;
-    }
-
-    if (window) {
-      window.adsbygoogle = window.adsbygoogle || [];
-      window.adsbygoogle.push({});
-    }
+      if (window) {
+        window.adsbygoogle = window.adsbygoogle || [];
+        window.adsbygoogle.push({});
+      }
+    } catch (error) {}
   }, []);
 
   if (loading) {
